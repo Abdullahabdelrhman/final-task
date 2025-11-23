@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Merto</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; color: #333; background-color: #fff; }
+
+        /* --- Navbar Styles --- */
+        .top-header { padding: 15px 0; border-bottom: 1px solid #e5e7eb; }
+        .logo-text { font-weight: 900; font-size: 2rem; }
+        .accent-e { color: #000; position: relative; display: inline-block; }
+        .accent-e::after { content: ''; position: absolute; top: 3px; left: 0; width: 100%; height: 3px; background-color: #dc2626; }
+        
+        /* --- Product Section Styles --- */
+        .product-container { padding: 40px 0; }
+        
+        /* Image Gallery Layout */
+        .gallery-layout {
+            display: flex;
+            gap: 15px;
+        }
+
+        .thumbnails-col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 80px;
+            flex-shrink: 0;
+        }
+
+        .thumb-img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .thumb-img:hover, .thumb-img.active { border: 2px solid #000; }
+
+        /* Main Image Wrapper & Zoom Effect */
+        .main-image-wrapper {
+            flex-grow: 1;
+            position: relative;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: crosshair;
+            height: fit-content;
+        }
+
+        .main-image { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            transition: transform 0.1s ease-out; 
+            will-change: transform, transform-origin;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #dc2626;
+            color: white;
+            padding: 2px 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none; 
+        }
+        
+        .zoom-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 10;
+            color: #333;
+            pointer-events: none;
+        }
+
+        /* Product Info & Text Hovers */
+        .brand-name { 
+            color: #999; 
+            font-size: 0.9rem; 
+            margin-bottom: 5px; 
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .brand-name:hover { color: #dc2626; }
+
+        .product-title { 
+            font-weight: 700; 
+            font-size: 1.8rem; 
+            line-height: 1.2; 
+            margin-bottom: 10px; 
+            transition: color 0.2s;
+            cursor: default;
+        }
+        .product-title:hover { color: #dc2626; }
+        
+        .rating-container { display: flex; align-items: center; gap: 5px; margin-bottom: 15px; font-size: 0.9rem; }
+        .stars { color: #ffc107; }
+        
+        .review-count { 
+            color: #666; 
+            text-decoration: none; 
+            transition: color 0.2s;
+        }
+        .review-count:hover { color: #dc2626; }
+
+        .features-list { list-style: none; padding: 0; margin-bottom: 20px; }
+        .features-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; font-size: 0.95rem; color: #555; }
+        .features-list li i { color: #28a745; }
+
+        .price-area { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .current-price { font-size: 1.8rem; font-weight: 800; color: #000; }
+        .old-price { text-decoration: line-through; color: #999; font-size: 1.2rem; }
+        .save-price { color: #dc2626; font-weight: 600; }
+
+        /* Countdown Timer */
+        .countdown-container { display: flex; gap: 10px; margin-bottom: 25px; }
+        .countdown-box {
+            background-color: #dc2626;
+            color: white;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .countdown-box.dark { background-color: #000; }
+
+        .stock-status { 
+            background-color: #e6f4ea; 
+            color: #1e7e34; 
+            display: inline-block; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-weight: 600; 
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        /* Actions */
+        .actions-row { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        
+        .quantity-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            height: 50px;
+        }
+        .qty-btn {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 100%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.2s;
+        }
+        .qty-btn:hover { color: #dc2626; }
+
+        .qty-input {
+            width: 50px;
+            border: none;
+            text-align: center;
+            font-weight: 600;
+            height: 100%;
+            outline: none;
+        }
+
+        .btn-add-cart {
+            background-color: #000;
+            color: white;
+            border: none;
+            height: 50px;
+            padding: 0 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+        .btn-add-cart:hover { background-color: #333; }
+
+        .btn-buy-now {
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            height: 50px;
+            padding: 0 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        .btn-buy-now:hover { background-color: #b91c1c; }
+
+        .meta-actions { display: flex; gap: 20px; margin-bottom: 20px; font-size: 0.9rem; }
+        .meta-actions a { 
+            color: #666; 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 6px; 
+            transition: color 0.2s; 
+        }
+        .meta-actions a:hover { color: #dc2626; }
+
+        .product-meta { font-size: 0.9rem; color: #666; line-height: 1.8; border-top: 1px solid #eee; padding-top: 20px; }
+        .meta-label { font-weight: 700; color: #000; margin-right: 5px; }
+        .social-share { display: flex; gap: 15px; margin-top: 10px; }
+        .social-share i { color: #999; cursor: pointer; transition: color 0.2s; }
+        .social-share i:hover { color: #dc2626; }
+
+        /* Breadcrumb Hover */
+        .breadcrumb-item a { transition: color 0.2s; }
+        .breadcrumb-item a:hover { color: #dc2626 !important; }
+
+    </style>
+</head>
+<body>
+
+    <!-- BREADCRUMB -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb small text-muted">
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Shop</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Home & Decor</a></li>
+                <li class="breadcrumb-item active" aria-current="page">14-inch Fashion Simplicity...</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- PRODUCT SECTION -->
+    <div class="container product-container">
+        <div class="row">
+            
+            <!-- LEFT: IMAGE GALLERY -->
+            <div class="col-lg-6 mb-4">
+                <div class="gallery-layout">
+                    
+                    <!-- Thumbnails (Vertical Left) -->
+                    <div class="thumbnails-col">
+                        <img src="./imge/furniture-6-300x300.jpg" class="thumb-img active" onclick="changeImage(this, './imge/furniture-6.jpg')">
+                        <img src="./imge/furniture-7.jpg" class="thumb-img" onclick="changeImage(this, './imge/furniture-7.jpg')">
+                        <img src="./imge/furniture-8-300x300.jpg" class="thumb-img" onclick="changeImage(this, './imge/furniture-6.jpg')">
+                    </div>
+
+                    <!-- Main Image (Right) -->
+                    <div class="main-image-wrapper">
+                        <span class="discount-badge">-33%</span>
+                        <div class="zoom-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <img id="mainImage" src="./imge/furniture-6-300x300.jpg" class="main-image" alt="Product">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT: PRODUCT DETAILS -->
+            <div class="col-lg-6">
+                <div class="brand-name">Haworth</div>
+                <h1 class="product-title">14-inch Fashion Simplicity Quality Wall Clock, Home Decor</h1>
+                
+                <div class="rating-container">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span class="text-muted">(4.50)</span>
+                    <a href="#" class="review-count ms-2">2 Reviews</a>
+                    <span class="text-muted mx-2">|</span>
+                    <a href="#" class="review-count text-decoration-underline">Write a review</a>
+                </div>
+
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Light weight</li>
+                    <li><i class="fa-solid fa-check"></i> Easy to read</li>
+                    <li><i class="fa-solid fa-check"></i> Sheerness</li>
+                </ul>
+
+                <div class="price-area">
+                    <span class="current-price">$50</span>
+                    <span class="old-price">$75</span>
+                    <span class="save-price">(Save $25)</span>
+                </div>
+
+                <div class="countdown-container">
+                    <div class="countdown-box">784</div>
+                    <div class="countdown-box">08</div>
+                    <div class="countdown-box dark">17</div>
+                    <div class="countdown-box dark" id="secondsBox">33</div>
+                </div>
+
+                <div class="stock-status"><i class="fa-solid fa-check me-1"></i> in stock</div>
+
+                <div class="actions-row">
+                    <div class="quantity-wrapper">
+                        <button class="qty-btn" onclick="updateQty(-1)">-</button>
+                        <input type="text" class="qty-input" value="1" id="qtyInput" readonly>
+                        <button class="qty-btn" onclick="updateQty(1)">+</button>
+                    </div>
+                    <button class="btn-add-cart">
+                        <i class="fa-solid fa-plus"></i> Add to cart
+                    </button>
+                    <button class="btn-buy-now">Buy Now</button>
+                </div>
+
+                <div class="meta-actions">
+                    <a href="#"><i class="fa-regular fa-heart"></i> Add to wishlist</a>
+                    <a href="#"><i class="fa-solid fa-code-compare"></i> Add to compare</a>
+                </div>
+
+                <div class="product-meta">
+                    <div class="mb-2"><span class="meta-label">SKU:</span> LNSKAJPY95</div>
+                    <div class="mb-2"><span class="meta-label">Categories:</span> Mirrors & Clocks, Office Furniture, Wall Decor</div>
+                    <div class="social-share">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-pinterest-p"></i>
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function changeImage(element, newSrc) {
+            document.getElementById('mainImage').src = newSrc;
+            document.querySelectorAll('.thumb-img').forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function updateQty(change) {
+            const input = document.getElementById('qtyInput');
+            let newVal = parseInt(input.value) + change;
+            if (newVal < 1) newVal = 1;
+            input.value = newVal;
+        }
+
+        // Countdown Timer
+        setInterval(() => {
+            const secBox = document.getElementById('secondsBox');
+            let currentSec = parseInt(secBox.innerText);
+            if (currentSec > 0) {
+                secBox.innerText = currentSec - 1 < 10 ? '0' + (currentSec - 1) : currentSec - 1;
+            } else {
+                secBox.innerText = 59;
+            }
+        }, 1000);
+
+        // Zoom Logic: Follow Mouse
+        const imgContainer = document.querySelector('.main-image-wrapper');
+        const img = document.querySelector('.main-image');
+
+        imgContainer.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = imgContainer.getBoundingClientRect();
+            const x = e.clientX - left;
+            const y = e.clientY - top;
+
+            // Calculate percentage
+            const xPercent = (x / width) * 100;
+            const yPercent = (y / height) * 100;
+
+            img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            img.style.transform = "scale(1.8)"; // Adjust Zoom Level
+        });
+
+        imgContainer.addEventListener('mouseleave', () => {
+            img.style.transformOrigin = "center center";
+            img.style.transform = "scale(1)";
+        });
+    </script>
+</body>
+</html>

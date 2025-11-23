@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merto - Full Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <header class="bg-white sticky-top shadow-sm con">
+        <div class="container-fluid top-header py-3 border-bottom container">
+            <div class="row align-items-center">
+                <div class="col-6 col-lg-2">
+                    <a href="#" class="text-decoration-none logo-text">M<span class="accent-e">e</span>rto</a>
+                </div>
+                <div class="col-lg-3 d-none d-lg-flex align-items-center gap-3">
+                    <div class="rounded-circle border border-dark d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="lh-1">
+                        <div class="text-muted small">Contact us 24/7</div>
+                        <div class="fw-bold">(+92) 3942 7879</div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 my-2 my-lg-0">
+                    <div class="search-wrapper d-flex align-items-center bg-light rounded">
+                        <button class="btn btn-sm border-end fw-bold">All</button>
+                        <input type="text" class="form-control bg-transparent border-0" placeholder="Search...">
+                        <button class="btn btn-dark"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 d-flex justify-content-end gap-4 align-items-center">
+                    
+                    <div class="d-none d-xl-flex gap-3 small fw-bold">
+                        <div class="dropdown hover-dropdown">
+                            <span class="cursor-pointer">English <i class="fa-solid fa-chevron-down"></i></span>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item small" href="#">العربية</a></li>
+                                <li><a class="dropdown-item small" href="#">Español</a></li>
+                                <li><a class="dropdown-item small" href="#">Français</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown hover-dropdown">
+                            <span class="cursor-pointer">USD <i class="fa-solid fa-chevron-down"></i></span>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item small" href="#">EUR</a></li>
+                                <li><a class="dropdown-item small" href="#">EGP</a></li>
+                                <li><a class="dropdown-item small" href="#">SAR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="text-dark"><i class="fa-regular fa-user fa-lg"></i></a>
+                    <a href="#" class="text-dark position-relative">
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                        <span class="badge-count">0</span>
+                    </a>
+                    <a href="#" class="text-dark position-relative">
+                        <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                        <span class="badge-count">2</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid d-none d-lg-block container">
+            <div class="d-flex align-items-center justify-content-between h-60px">
+                <div class="d-flex align-items-center h-100">
+                    <div class="shop-categories px-3 border-end h-100 d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#categoriesSidebar">
+                        <i class="fa-solid fa-bars me-2"></i> SHOP BY CATEGORIES
+                    </div>
+                    <nav class="d-flex ms-3 gap-4 fw-bold">
+                        
+                        <div class="position-relative homepage-dropdown-wrapper h-100">
+                            <a href="#" class="nav-link text-danger d-flex align-items-center">Homepages <i class="fa-solid fa-chevron-down ms-1"></i></a>
+                            
+                            <div class="mega-menu bg-white p-4 shadow rounded">
+                                <div class="row g-3">
+                                    <div class="col-6 col-md-4 col-lg-2 homepage-item">
+                                        <a href="#" class="d-block text-center text-decoration-none">
+                                            <img src="https://images.unsplash.com/photo-1542838132-92c5332f4e42?w=200" alt="Home 1" class="img-fluid rounded mb-2">
+                                            <span class="d-block small text-dark fw-bold">Home 1 - Grocery</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-2 homepage-item">
+                                        <a href="#" class="d-block text-center text-decoration-none">
+                                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200" alt="Home 2" class="img-fluid rounded mb-2">
+                                            <span class="d-block small text-dark fw-bold">Home 2 - Furniture</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-2 homepage-item">
+                                        <a href="#" class="d-block text-center text-decoration-none">
+                                            <img src="https://images.unsplash.com/photo-1532130588661-8b010b106209?w=200" alt="Home 3" class="img-fluid rounded mb-2">
+                                            <span class="d-block small text-dark fw-bold">Home 3 - Cosmetics</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-2 homepage-item">
+                                        <a href="#" class="d-block text-center text-decoration-none">
+                                            <img src="https://images.unsplash.com/photo-1517457210874-297072b22da1?w=200" alt="Home 4" class="img-fluid rounded mb-2">
+                                            <span class="d-block small text-dark fw-bold">Home 4 - Outdoors</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-2 homepage-item">
+                                        <a href="#" class="d-block text-center text-decoration-none">
+                                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06a31c?w=200" alt="Home 5" class="img-fluid rounded mb-2">
+                                            <span class="d-block small text-dark fw-bold">Home 5 - Electronics</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-2 homepage-item">
+                                        <a href="#" class="d-block text-center text-decoration-none">
+                                            <img src="https://images.unsplash.com/photo-1534024849185-3b95764d7c04?w=200" alt="Home 6" class="img-fluid rounded mb-2">
+                                            <span class="d-block small text-dark fw-bold">Home 6 - Fashion</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="nav-item dropdown hover-dropdown d-flex align-items-center">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">Single Product</a></li>
+                                <li><a class="dropdown-item" href="#">Product Grid</a></li>
+                                <li><a class="dropdown-item" href="#">Product List</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="nav-item dropdown hover-dropdown d-flex align-items-center">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">About Us</a></li>
+                                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="nav-link">About us</a>
+                    </nav>
+                </div>
+                <div class="small fw-bold text-muted">Recently viewed <i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="offcanvas offcanvas-start" id="categoriesSidebar">
+        <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title">Categories</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <a href="#" class="category-list-item"><i class="fa-solid fa-shirt"></i> Fashion</a>
+            <a href="#" class="category-list-item"><i class="fa-solid fa-laptop"></i> Electronics</a>
+            <a href="#" class="category-list-item"><i class="fa-solid fa-couch"></i> Home & Decor</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="d-flex flex-column flex-lg-row w-100 vh-100-custom">
+       <div class="w-100 h-80 position-relative overflow-hidden group">
+    
+    <div class="hero-slide active position-absolute w-100 h-100 d-flex align-items-center bg-beige" data-index="0">
+        
+        <div class="p-5 z-2"> 
+            <span class="text-uppercase ls-2 small fw-bold text-muted">spf lab</span>
+            <h1 class="display-3 fw-bolder mb-3">Lotion<br>50+</h1>
+            <button class="btn btn-light rounded-pill px-4 py-2 fw-bold shadow-sm">SHOP NOW</button>
+        </div>
+        
+        <img src="./imge/slide1-demo1 (1).jpg" class="position-absolute end-0 top-0 h-100 w-100 object-fit-cover start-0" alt="Lotion">
+    </div>
+
+    <div class="hero-slide position-absolute w-100 h-100 d-flex align-items-center bg-danger" data-index="1">
+        
+        <div class="p-5 z-2">
+            <span class="text-uppercase ls-2 small fw-bold text-white-50">Polar *</span>
+            <h1 class="display-3 fw-bolder mb-3 text-white">Camera<br>Sale</h1>
+            <button class="btn btn-dark rounded-pill px-4 py-2 fw-bold shadow-sm">SHOP NOW</button>
+        </div>
+        
+        <img src="./imge/slide2-demo1 (1).jpg" class="position-absolute end-0 top-0 h-100 w-100 object-fit-cover start-0" alt="Camera">
+    </div>
+    <div class="hero-slide position-absolute w-100 h-100 d-flex align-items-center bg-danger" data-index="1">
+        
+        <div class="p-5 z-2">
+            <span class="text-uppercase ls-2 small fw-bold text-white-50">Polar *</span>
+            <h1 class="display-3 fw-bolder mb-3 text-white">Camera<br>Sale</h1>
+            <button class="btn btn-dark rounded-pill px-4 py-2 fw-bold shadow-sm">SHOP NOW</button>
+        </div>
+        
+        <img src="./imge/slide3-demo1 (1).png" class="position-absolute end-0 top-0 h-100 w-100 object-fit-cover start-0" alt="Camera">
+    </div>
+    
+    <div class="position-absolute bottom-0 start-0 p-4 d-flex gap-2 z-3">
+        <button class="hero-indicator active" onclick="goToSlide(0)"></button>
+        <button class="hero-indicator" onclick="goToSlide(1)"></button>
+    </div>
+    </div>
+     <div class="w-50 w-lg-50 h-100 d-flex flex-column">
+    <div class="h-50 position-relative border-bottom p-4 d-flex flex-column justify-content-center image-overlay">
+        <img src="./imge/banner2-mobile-demo1.jpg" class="banner-img w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Eyeshadow">
+        
+        <div class="z-2 text-white"> <h2 class="serif-font fw-bold">Big Sale<br>Eyeshadow</h2>
+            <button class="btn btn-outline-light rounded-pill btn-sm mt-2">SHOP NOW</button> </div>
+    </div>
+    <div class="h-50 position-relative p-4 d-flex flex-column justify-content-center image-overlay">
+        <img src="./imge/banner1-demo1.jpg" class="banner-img w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Jacket">
+
+        <div class="z-2 text-dark"> <h2 class="serif-font fw-bold">Puffer Jacket<br>30% off</h2>
+            <button class="btn btn-outline-dark rounded-pill btn-sm mt-2">SHOP NOW</button>
+        </div>
+    </div>
+</div>
+    </div>
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container py-5">
+        <div class="row g-4 rounded-3 p-4 bg-white ">
+            <div class="col-lg-3 col-md-6 d-flex align-items-center border-end-md">
+                <i class="fa-solid fa-truck-fast fa-2x text-muted me-3"></i>
+                <div><h6 class="m-0 fw-bold">Free Delivery</h6><small class="text-muted">On all orders > $100</small></div>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex align-items-center border-end-md">
+                <i class="fa-solid fa-sack-dollar fa-2x text-muted me-3"></i>
+                <div><h6 class="m-0 fw-bold">Low Prices</h6><small class="text-muted">Best price guarantee</small></div>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex align-items-center border-end-md">
+                <i class="fa-solid fa-headset fa-2x text-muted me-3"></i>
+                <div><h6 class="m-0 fw-bold">24/7 Support</h6><small class="text-muted">Ready to help</small></div>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex align-items-center">
+                <i class="fa-solid fa-shield-halved fa-2x text-muted me-3"></i>
+                <div><h6 class="m-0 fw-bold">Secure Payment</h6><small class="text-muted">100% Secure</small></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-light">
+        <h3 class="text-center fw-bold mb-4">Browse by Category</h3>
+        
+        <div class="slider-wrapper container position-relative">
+            <button class="slider-btn prev-btn shadow-sm" onclick="scrollSlider('catSlider', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next-btn shadow-sm" onclick="scrollSlider('catSlider', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="horizontal-scroll" id="catSlider">
+                
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cat-2.jpg" alt="Phones">
+                    </div>
+                    <p class="mt-2 fw-bold">Phones</p>
+                </div>
+
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cat-5.jpg" alt="Laptop">
+                    </div>
+                    <p class="mt-2 fw-bold">Laptops</p>
+                </div>
+
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cat-7.jpg" alt="Fashion">
+                    </div>
+                    <p class="mt-2 fw-bold">Fashion</p>
+                </div>
+
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cosmetic-2-300x300.jpg" alt="Headphones">
+                    </div>
+                    <p class="mt-2 fw-bold">Headphones</p>
+                </div>
+
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cat-6.jpg" alt="Decor">
+                    </div>
+                    <p class="mt-2 fw-bold">Decor</p>
+                </div>
+
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cat-4.jpg" alt="Beauty">
+                    </div>
+                    <p class="mt-2 fw-bold">Beauty</p>
+                </div>
+                
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cat-8.jpg" alt="Gaming">
+                    </div>
+                    <p class="mt-2 fw-bold">Gaming</p>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/banner2-mobile-demo1.jpg" alt="Gaming">
+                    </div>
+                    <p class="mt-2 fw-bold">Gaming</p>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cosmetic-cat-7.jpg" alt="Gaming">
+                    </div>
+                    <p class="mt-2 fw-bold">Gaming</p>
+                </div>
+                <div class="cat-item">
+                    <div class="cat-circle">
+                        <i class="fa-solid fa-arrow-right cat-arrow"></i>
+                        <img src="./imge/cat-2.jpg" alt="Gaming">
+                    </div>
+                    <p class="mt-2 fw-bold">Gaming</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+  <div class="p-3 border rounded-3 text-center">
+    Super discount for your **first purchase** <span class="text-danger fw-bold dotted-underline">COUPON25</span> 
+    
+    Use discount code in the checkout!
+  </div>
+</div>
+
+    <div class="container py-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+            <h2 class="fw-bold m-0 display-6">Flash Deals</h2>
+            
+            <div class="d-flex gap-3 align-items-center">
+                <div class="text-uppercase small fw-bold text-danger me-2">Ends in:</div>
+                <div class="timer-circle">
+                    <span id="hours-1">00</span><small>Hrs</small>
+                </div>
+                <div class="timer-circle">
+                    <span id="minutes-1">00</span><small>Min</small>
+                </div>
+                <div class="timer-circle">
+                    <span id="seconds-1">00</span><small>Sec</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container position-relative">
+            <button class="nav-btn prev-btn shadow-sm" onclick="scrollSlider('slider-1', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-btn next-btn shadow-sm" onclick="scrollSlider('slider-1', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="product-scroll-wrapper" id="slider-1">
+                <div class="product-card">
+                    <div class="img-box">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2 z-2">-30%</span>
+                        <img src="./imge/cosmetic-2-300x300.jpg" alt="Watch">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Classic Watch</h6>
+                        <div class="text-warning small mb-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="fw-bold">$50 <s class="text-muted small fw-normal ms-1">$75</s></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-box">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2 z-2">-20%</span>
+                        <img src="./imge/cosmetic-cat-7.jpg" alt="Shoes">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Nike Air Max</h6>
+                        <div class="text-warning small mb-1"><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="fw-bold">$120 <s class="text-muted small fw-normal ms-1">$150</s></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="./imge/cosmetics-33-300x300.jpg" alt="Headphone">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Sony Headphone</h6>
+                        <div class="fw-bold">$200</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="./imge/cosmetics-40-1-300x300.jpg" alt="Chair">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Office Chair</h6>
+                        <div class="fw-bold">$89</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container py-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+            <h2 class="fw-bold m-0 display-6">Hot Deals</h2>
+            
+            <div class="d-flex gap-3 align-items-center">
+                <div class="text-uppercase small fw-bold text-danger me-2">Ends in:</div>
+                <div class="timer-circle">
+                    <span id="hours-2">00</span><small>Hrs</small>
+                </div>
+                <div class="timer-circle">
+                    <span id="minutes-2">00</span><small>Min</small>
+                </div>
+                <div class="timer-circle">
+                    <span id="seconds-2">00</span><small>Sec</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container position-relative">
+            <button class="nav-btn prev-btn shadow-sm" onclick="scrollSlider('slider-2', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-btn next-btn shadow-sm" onclick="scrollSlider('slider-2', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="product-scroll-wrapper" id="slider-2">
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="./imge/electronic-14-2-300x300.jpg" alt="Product">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Polaroid Camera</h6>
+                        <div class="fw-bold">$299</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="./imge/electronic-30-6-300x300.jpg" alt="Product">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Smart Watch</h6>
+                        <div class="fw-bold">$199</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="./imge/electronic-30-6-300x300.jpg" alt="Product">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Perfume Bottle</h6>
+                        <div class="fw-bold">$85</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="./imge/fashion-1-300x300.jpg" alt="Product">
+                        <div class="overlay-btns">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-truncate">Cosmetic Set</h6>
+                        <div class="fw-bold">$45</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <div class="row g-4 d-flex">
+            <div class="col-md-3 ">
+                <a href="#" class="collection-card bg-light-gray">
+                    <div class="text-content">
+                        <span class="text-primary fw-bold small">NEW</span>
+                        <h2 class="serif-font fw-bold">Luxury<br>Cars</h2>
+                        <span class="btn-link">Shop now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <img src="./imge/banner3-demo1 (1).jpg" alt="Car">
+                </a>
+            </div>
+            <div class=" col-6">
+                <a href="#" class="collection-card bg-beige">
+                    <div class="text-content">
+                        <span class="text-warning fw-bold small">HOT</span>
+                        <h2 class="serif-font fw-bold">Comfy<br>Sofa</h2>
+                        <span class="btn-link">Shop now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <img src="./imge/banner4-mobile-demo1.jpg" alt="Sofa">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="collection-card bg-light-pink">
+                    <div class="text-content">
+                        <span class="text-danger fw-bold small">TECH</span>
+                        <h2 class="serif-font fw-bold">Smart<br>Devices</h2>
+                        <span class="btn-link">Shop now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <img src="./imge/banner5-mobile-demo1.jpg" alt="Tech">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <h2 class="fw-bold m-0">New arrivals</h2>
+            <ul class="nav nav-pills custom-tabs" id="pills-tab" role="tablist">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-fashion">Fashion</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-phone">Phone & Tablet</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-decor">Home & Decor</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-beauty">Beauty & Health</button></li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="pills-tabContent">
+            
+            <div class="tab-pane fade show active" id="tab-fashion">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-0">
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/fashion-5-300x300.jpg" alt="T-Shirt">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Cotton Basic T-Shirt</p>
+                                <div class="fw-bold fs-6 mb-1">$25</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group">
+                                    <a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <span class="badge-discount">-20%</span>
+                                <img src="./imge/fashion-6-300x300.jpg" alt="Sneakers">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Nike Air Max Red</p>
+                                <div class="fw-bold fs-6 mb-1">$120 <s class="text-muted small fw-normal">$150</s></div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group">
+                                    <a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-7.jpg" alt="Jacket">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Retro Denim Jacket</p>
+                                <div class="fw-bold fs-6 mb-1">$89</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group">
+                                    <a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-6-300x300.jpg" alt="Shirt">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Casual Slim Fit Shirt</p>
+                                <div class="fw-bold fs-6 mb-1">$45</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group">
+                                    <a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-7.jpg" alt="Dress">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Summer Floral Dress</p>
+                                <div class="fw-bold fs-6 mb-1">$60</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group">
+                                    <a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <span class="badge-discount">NEW</span>
+                                <img src="./imge/furniture-6-300x300.jpg" alt="Hoodie">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Oversized Hoodie</p>
+                                <div class="fw-bold fs-6 mb-1">$55</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group">
+                                    <a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-phone">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-0">
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-7.jpg" alt="Phone">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">iPhone 14 Pro</p>
+                                <div class="fw-bold fs-6 mb-1">$999</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-8-300x300.jpg" alt="Watch">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Apple Watch Ultra</p>
+                                <div class="fw-bold fs-6 mb-1">$799</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-8-300x300.jpg" alt="Headphones">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Sony WH-1000XM5</p>
+                                <div class="fw-bold fs-6 mb-1">$348</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-8-300x300.jpg" alt="Tablet">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">iPad Air 5</p>
+                                <div class="fw-bold fs-6 mb-1">$599</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-8-300x300.jpg" alt="Samsung">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Samsung S23 Ultra</p>
+                                <div class="fw-bold fs-6 mb-1">$1199</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/furniture-8-300x300.jpg" alt="Airpods">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">AirPods Pro 2</p>
+                                <div class="fw-bold fs-6 mb-1">$249</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-decor">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-0">
+                    <div class="col"><div class="product-card-style2"><div class="card-img-top-wrap"><img src="./imge/slide-hoodie-1.png"></div><div class="card-content-padding"><p class="mb-1 fw-bold text-truncate">Modern Chair</p><div class="fw-bold fs-6">$89</div></div><div class="hover-action-bar"><button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button><div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div></div></div></div>
+                    <div class="col"><div class="product-card-style2"><div class="card-img-top-wrap"><img src="./imge/cat-5.jpg"></div><div class="card-content-padding"><p class="mb-1 fw-bold text-truncate">Wall Decor</p><div class="fw-bold fs-6">$45</div></div><div class="hover-action-bar"><button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button><div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div></div></div></div>
+                    <div class="col"><div class="product-card-style2"><div class="card-img-top-wrap"><img src="https://images.unsplash.com/photo-1581783342308-f792ca4328dd?w=300"></div><div class="card-content-padding"><p class="mb-1 fw-bold text-truncate">Table Lamp</p><div class="fw-bold fs-6">$35</div></div><div class="hover-action-bar"><button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button><div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div></div></div></div>
+                    <div class="col"><div class="product-card-style2"><div class="card-img-top-wrap"><img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=300"></div><div class="card-content-padding"><p class="mb-1 fw-bold text-truncate">Ceramic Vase</p><div class="fw-bold fs-6">$20</div></div><div class="hover-action-bar"><button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button><div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div></div></div></div>
+                    <div class="col"><div class="product-card-style2"><div class="card-img-top-wrap"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=300"></div><div class="card-content-padding"><p class="mb-1 fw-bold text-truncate">Throw Pillow</p><div class="fw-bold fs-6">$15</div></div><div class="hover-action-bar"><button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button><div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div></div></div></div>
+                    <div class="col"><div class="product-card-style2"><div class="card-img-top-wrap"><img src="https://images.unsplash.com/photo-1463320898484-cdee8141c787?w=300"></div><div class="card-content-padding"><p class="mb-1 fw-bold text-truncate">Indoor Plant</p><div class="fw-bold fs-6">$30</div></div><div class="hover-action-bar"><button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button><div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div></div></div></div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-beauty">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-0">
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/slide-hoodie-1.png" alt="Sunscreen">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Sunscreen SPF 50</p>
+                                <div class="fw-bold fs-6 mb-1">$14</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/electronic-14-2-300x300.jpg" alt="Mascara">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Waterproof Mascara</p>
+                                <div class="fw-bold fs-6 mb-1">$10</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <span class="badge-discount">-37%</span>
+                                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=300" alt="Powder">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Face Powder</p>
+                                <div class="fw-bold fs-6 mb-1">$9</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <span class="badge-discount">-17%</span>
+                                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300" alt="Lipstick">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Intense Lipstick</p>
+                                <div class="fw-bold fs-6 mb-1">$20</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/cat-1.jpg" alt="Serum">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Vitamin C Serum</p>
+                                <div class="fw-bold fs-6 mb-1">$30</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card-style2">
+                            <div class="card-img-top-wrap">
+                                <img src="./imge/cat-7.jpg" alt="Perfume">
+                            </div>
+                            <div class="card-content-padding">
+                                <p class="mb-1 text-truncate fw-bold">Floral Perfume</p>
+                                <div class="fw-bold fs-6 mb-1">$45</div>
+                            </div>
+                            <div class="hover-action-bar">
+                                <button class="btn-add-cart-black"><i class="fas fa-plus"></i> ADD</button>
+                                <div class="icon-btn-group"><a href="#" class="btn-icon-square"><i class="far fa-heart"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="container py-5">
+        <div class="product-highlight-wrapper d-flex align-items-center justify-content-center flex-column flex-md-row">
+            <div class="highlight-image position-relative text-center">
+                <div class="bg-text">HOODIE</div>
+                <div class="discount-badge">-30%</div>
+                <img src="./imge/slide-hoodie-1.png" id="mainHighlightImg" class="main-img" alt="Hoodie">
+            </div>
+            <div class="highlight-details bg-white p-5 rounded shadow-lg">
+                <h2 class="fw-bold mb-3">Athletics Embroidered Hoodie</h2>
+                <ul class="list-unstyled text-muted mb-4">
+                    <li><i class="fas fa-check text-success me-2"></i> 100% Cotton</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Machine Washable</li>
+                </ul>
+                <div class="fs-2 fw-bold mb-3">$89 <s class="text-muted fs-5 fw-normal">$120</s></div>
+                <div class="thumbs d-flex gap-2 mb-4">
+                    <img src="./imge/slide-hoodie-1.png" class="thumb-img active" onclick="updateHighlight(this)">
+                    <img src="./imge/slide-hoodie-2.png" class="thumb-img" onclick="updateHighlight(this)">
+                    <img src="./imge/slide-hoodie-4.png" class="thumb-img" onclick="updateHighlight(this)">
+                </div>
+                <button class="btn btn-dark w-100 py-3 fw-bold">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold mb-4">Best Selling</h2>
+            <div class="d-flex gap-2 timer-container">
+                <div class="timer-box"><span id="hours2">00</span><small>Hrs</small></div>
+                <div class="timer-box"><span id="minutes2">00</span><small>Min</small></div>
+                <div class="timer-box"><span id="seconds2">00</span><small>Sec</small></div>
+            </div>
+        </div>
+
+        <div class="slider-wrapper position-relative">
+            <button class="slider-btn prev-btn" onclick="scrollSlider('prodSlider2', -1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="scrollSlider('prodSlider2', 1)"><i class="fas fa-chevron-right"></i></button>
+
+            <div class="horizontal-scroll" id="prodSlider2">
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="./imge/cat-1.jpg" alt="Watch">
+                        <div class="hover-actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <h6 class="card-title">Classic Minimal Watch</h6>
+                        <div class="fw-bold">$50</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="./imge/cat-7.jpg" alt="Watch">
+                        <div class="hover-actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <h6 class="card-title">Classic Minimal Watch</h6>
+                        <div class="fw-bold">$50</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="./imge/cat-4.jpg" alt="Watch">
+                        <div class="hover-actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <h6 class="card-title">Classic Minimal Watch</h6>
+                        <div class="fw-bold">$50</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="./imge/fashion-9-300x300.jpg" alt="Headphones">
+                        <div class="hover-actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <h6 class="card-title">Wireless Headphones</h6>
+                        <div class="fw-bold">$200</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="./imge/cat-8.jpg" alt="Shoes">
+                        <div class="hover-actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <h6 class="card-title">Nike Air Max</h6>
+                        <div class="fw-bold">$120</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="./imge/cat-6.jpg" alt="Chair">
+                        <div class="hover-actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body p-3">
+                        <h6 class="card-title">Office Chair</h6>
+                        <div class="fw-bold">$89</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <h2 class="fw-bold mb-4">From Our Blog </h2>
+        <div class="horizontal-scroll pb-3">
+            <div class="blog-card" style="min-width: 300px; margin-right: 20px;">
+                <div class="rounded overflow-hidden mb-3" style="height: 200px;">
+                    <img src="./imge/blog-1.jpg" class="w-100 h-100 object-fit-cover hover-scale" alt="Blog">
+                </div>
+                <div class="small text-muted fw-bold mb-1">FASHION • By Mina</div>
+                <h5 class="fw-bold hover-red cursor-pointer">Inspiration for All Occasions</h5>
+                <p class="text-muted small">Discover the latest trends in fashion...</p>
+                <a href="#" class="fw-bold text-dark text-decoration-none border-bottom border-dark">READ MORE</a>
+            </div>
+            <div class="blog-card" style="min-width: 300px; margin-right: 20px;">
+                <div class="rounded overflow-hidden mb-3" style="height: 200px;">
+                    <img src="./imge/blog-2.jpg" class="w-100 h-100 object-fit-cover hover-scale" alt="Blog">
+                </div>
+                <div class="small text-muted fw-bold mb-1">TECH • By Alex</div>
+                <h5 class="fw-bold hover-red cursor-pointer">Cleaning Your Workspace</h5>
+                <p class="text-muted small">Tips for keeping your laptop and desk clean...</p>
+                <a href="#" class="fw-bold text-dark text-decoration-none border-bottom border-dark">READ MORE</a>
+            </div>
+            <div class="blog-card" style="min-width: 300px; margin-right: 20px;">
+                <div class="rounded overflow-hidden mb-3" style="height: 200px;">
+                    <img src="./imge/blog-3.jpg" class="w-100 h-100 object-fit-cover hover-scale" alt="Blog">
+                </div>
+                <div class="small text-muted fw-bold mb-1">DECOR • By Sarah</div>
+                <h5 class="fw-bold hover-red cursor-pointer">Minimalist Trends</h5>
+                <p class="text-muted small">Why less is more in interior design...</p>
+                <a href="#" class="fw-bold text-dark text-decoration-none border-bottom border-dark">READ MORE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light py-5 text-center">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Looking for something else?</h3>
+            <div class="input-group mx-auto mb-3" style="max-width: 600px;">
+                <input type="text" class="form-control p-3 border-0" placeholder="Search for products...">
+                <button class="btn btn-dark px-4"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="text-muted small">
+                <a href="#" class="text-dark text-decoration-none mx-2 hover-red">iPhone</a> | 
+                <a href="#" class="text-dark text-decoration-none mx-2 hover-red">Samsung</a> | 
+                <a href="#" class="text-dark text-decoration-none mx-2 hover-red">Laptops</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer bg-dark-custom text-white pt-5">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h3 class="footer-logo mb-4">Merto</h3>
+                    <div class="contact-info small text-muted">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 29 SE 2nd Ave, Miami, Florida 33131, United States</p>
+                        <p><i class="far fa-envelope me-2"></i> info@example.com</p>
+                        <p class="fs-5 fw-bold text-white mt-3">(+92) 3942 7879</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6 mb-4">
+                    <h5 class="fw-bold mb-3">SHOPPING</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Offers</a></li>
+                        <li><a href="#">Shop by Brand</a></li>
+                        <li><a href="#">Track order</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6 mb-4">
+                    <h5 class="fw-bold mb-3">INFOMATION</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">ACCOUNT</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Cart</a></li>
+                        <li><a href="#">My account</a></li>
+                        <li><a href="#">My orders</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Let's keep in touch</h5>
+                    <div class="input-group mb-4 footer-subscribe">
+                        <input type="email" class="form-control" placeholder="enter your email address" aria-label="Email Address">
+                        <button class="btn btn-dark-arrow" type="button"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider my-4">
+
+            <div class="row text-center text-md-start py-3">
+                
+                <div class="col-lg-4 col-md-4 mb-3 mb-md-0">
+                    <div class="help-box">
+                        <i class="fas fa-phone-alt me-3"></i>
+                        <p>Didn't find what you were looking for? <br><a href="#" class="footer-cta-link">Contact Us</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 mb-3 mb-md-0">
+                    <div class="help-box">
+                        <i class="far fa-smile me-3"></i>
+                        <p>How can we help you today? <br><a href="#" class="footer-cta-link">Help Center</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="help-box">
+                        <i class="far fa-comment-dots me-3"></i>
+                        <p>We'd love to hear what you think! <br><a href="#" class="footer-cta-link">Give Feedback</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="footer-divider my-4">
+            
+            <div class="row py-3">
+                <div class="col-md-6 text-center text-md-start small text-muted">
+                    Copyright. © Merto. All Rights Reserved
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="" alt="Payment Methods" class="payment-icons">
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js">
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+        /* 1. GLOBAL & TYPOGRAPHY */
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; color: #333; }
+        .serif-font { font-family: 'Playfair Display', serif; }
+        .cursor-pointer { cursor: pointer; }
+        .hover-red:hover { color: #dc3545 !important; transition: 0.3s; }
+        .hover-white:hover { color: white !important; transition: 0.3s; }
+        .ls-2 { letter-spacing: 2px; }
+        .bg-custom-gray { background-color: #eeeeee; }
+
+        /* 2. HEADER & NAVIGATION */
+        .accent-e { position: relative; }
+        .accent-e::after { content: ''; position: absolute; top: 3px; left: 0; width: 100%; height: 3px; background: red; }
+        .logo-text { font-weight: 900; font-size: 1.8rem; color: #000; letter-spacing: -1px; }
+        .badge-count { position: absolute; top: -5px; right: -8px; background: red; color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center; }
+        .nav-link { color: #333; transition: 0.3s; }
+        .nav-link:hover { color: red; }
+        .shop-categories { cursor: pointer; font-weight: 700; transition: 0.3s; }
+        .shop-categories:hover { color: red; }
+        .category-list-item { display: block; padding: 10px 20px; color: #333; text-decoration: none; border-bottom: 1px solid #eee; transition: 0.3s; }
+        .category-list-item:hover { background: #f8f9fa; color: red; padding-left: 25px; }
+        
+        /* HOVER DROPDOWN (اللغة، العملة، Products, Pages) */
+        .hover-dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0; 
+        }
+        .nav-item.hover-dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        /* 3. HERO & FEATURES */
+        .vh-100-custom { height: auto; min-height: 100vh; }
+        @media(min-width: 992px) { .vh-100-custom { height: 100vh; } }
+        .hero-slide { opacity: 0; transition: opacity 0.8s ease; z-index: 0; pointer-events: none; }
+        .hero-slide.active { opacity: 1; z-index: 10; pointer-events: auto; }
+        .hero-indicator { width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(0,0,0,0.3); transition: 0.3s; }
+        .hero-indicator.active { width: 30px; border-radius: 10px; background: black; }
+        .bg-beige { background-color: #e8dcc6; }
+        .banner-img { position: absolute; right: 0; width: 50%; height: 100%; object-fit: cover; }
+        .border-end-md { border-right: none; }
+        @media(min-width: 768px) { .border-end-md { border-right: 1px solid #eee; } }
+
+        /* 4. SLIDERS & CAROUSEL NAVIGATION */
+        .slider-wrapper { padding: 0 40px; }
+        .horizontal-scroll { display: flex; overflow-x: auto; gap: 20px; scroll-behavior: smooth; scrollbar-width: none; padding: 10px 0; }
+        .horizontal-scroll::-webkit-scrollbar { display: none; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 35px; height: 35px; border-radius: 50%; border: 1px solid #ddd; background: white; z-index: 10; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .slider-btn:hover { background: black; color: white; border-color: black; }
+        .prev-btn { left: 0; } .next-btn { right: 0; }
+        .bg-custom-gray .slider-btn { box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff; }
+        .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1px solid #eee; z-index: 10; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .slider-container { padding: 0 20px; }
+        .product-scroll-wrapper { display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth; padding: 10px 0; scrollbar-width: none; }
+        .product-scroll-wrapper::-webkit-scrollbar { display: none; }
+
+        /* 5. PRODUCT CARDS & DEALS */
+        .product-card { flex: 0 0 250px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; position: relative; transition: 0.3s; background: white; }
+        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateY(-5px); } 
+        .card-img-wrap { position: relative; padding-top: 100%; background: #f9f9f9; overflow: hidden; }
+        .card-img-wrap img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 20px; transition: 0.5s; }
+        .product-card:hover img { transform: scale(1.05); }
+        .hover-actions { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 5px; opacity: 0; transform: translateX(10px); transition: 0.3s; }
+        .product-card:hover .hover-actions { opacity: 1; transform: translateX(0); }
+        .hover-actions button { width: 35px; height: 35px; border-radius: 50%; border: none; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: 0.2s; }
+        .hover-actions button:hover { background: red; color: white; }
+        .overlay-btns { position: absolute; top: 15px; right: 15px; display: flex; flex-direction: column; gap: 8px; opacity: 0; transform: translateX(20px); transition: all 0.3s ease; }
+        .product-card:hover .overlay-btns { opacity: 1; transform: translateX(0); }
+        .overlay-btns button { width: 35px; height: 35px; border-radius: 50%; border: none; background: white; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: 0.2s; }
+        .overlay-btns button:hover { background: #dc3545; color: white; }
+        .timer-box { background: black; color: white; border-radius: 5px; width: 50px; height: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; }
+        .timer-box span { font-weight: bold; font-size: 1.2rem; }
+        .timer-box small { font-size: 0.6rem; text-transform: uppercase; }
+        .timer-circle { background-color: #000; color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; }
+        .timer-circle span { font-size: 18px; font-weight: 700; }
+        .timer-circle small { font-size: 9px; text-transform: uppercase; opacity: 0.8; }
+        .discount-badge { position: absolute; top: 0; right: 20px; background: red; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .badge-discount { position: absolute; top: 10px; left: 10px; background-color: #dc3545; color: white; padding: 3px 8px; font-size: 12px; font-weight: bold; border-radius: 2px; z-index: 2; }
+        .img-box { position: relative; height: 260px; background: #f8f9fa; overflow: hidden; }
+        .img-box img { width: 100%; height: 100%; object-fit: contain; padding: 20px; transition: transform 0.5s ease; }
+        .product-card:hover .img-box img { transform: scale(1.1); }
+        .hover-buttons-bottom { position: absolute; bottom: 10px; left: 10px; right: 10px; opacity: 0; transform: translateY(10px); transition: 0.3s; }
+        .card-img-wrap:hover .hover-buttons-bottom { opacity: 1; transform: translateY(0); }
+
+        /* 6. NEW ARRIVALS CARD STYLE (SIDE-BY-SIDE) */
+        .product-card-style2 { background: #fff; border: none; border-radius: 0; overflow: hidden; position: relative; transition: all 0.3s ease; height: 100%; }
+        .product-card-style2:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .card-main-flex { display: flex; align-items: center; width: 100%; padding-bottom: 10px; }
+        .card-img-top-wrap { flex-basis: 35%; padding-top: 35%; position: relative; overflow: hidden; background: #fff; }
+        .card-content-padding { flex-basis: 65%; padding: 10px; text-align: left; transition: 0.3s; background: #fff; }
+        .hover-action-bar { position: absolute; bottom: 0; left: 0; width: 100%; background: #fff; display: flex; align-items: center; justify-content: space-between; padding: 10px; gap: 10px; transform: translateY(100%); opacity: 0; transition: all 0.3s ease-in-out; z-index: 10; border-top: 1px solid #f0f0f0; }
+        .product-card-style2:hover .hover-action-bar { transform: translateY(0); opacity: 1; }
+        .btn-add-cart-black { background-color: #000; color: #fff; border: none; padding: 10px 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; flex-grow: 1; display: flex; align-items: center; justify-content: center; gap: 5px; border-radius: 3px; transition: 0.2s; }
+        .btn-add-cart-black:hover { background-color: #333; color: #fff; }
+        .icon-btn-group { display: flex; gap: 5px; }
+        .btn-icon-square { width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; background-color: #f3f4f6; color: #333; border: none; border-radius: 3px; transition: 0.2s; text-decoration: none; }
+        .btn-icon-square:hover { background-color: #dc3545; color: #fff; }
+
+        /* 7. CATEGORY ITEMS (VIDEO STYLE ANIMATION) */
+        .cat-item { flex: 0 0 120px; text-align: center; cursor: pointer; }
+        .cat-circle { width: 120px; height: 120px; border-radius: 50%; background: #f1f3f5; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; transition: all 0.3s ease; }
+        .cat-arrow { position: absolute; left: 25px; color: #fff; font-size: 1.5rem; opacity: 0; transform: translateX(-20px); transition: all 0.3s ease; z-index: 2; }
+        .cat-circle img { width: 65%; transition: all 0.3s ease; z-index: 1; }
+        .cat-item:hover .cat-circle { background-color: #6c757d; }
+        .cat-item:hover .cat-circle img { transform: translateX(20px); }
+        .cat-item:hover .cat-arrow { opacity: 1; transform: translateX(0); }
+        .cat-item:hover p { color: #dc3545; transition: 0.3s; }
+
+        /* 8. COLLECTION GRID - تعديلات لطلب المستخدم */
+        .collection-card { 
+            display: block; 
+            position: relative; 
+            min-height: 300px; /* الارتفاع الأساسي */
+            border-radius: 12px; 
+            overflow: hidden; 
+            text-decoration: none; 
+            color: #fff; /* لون النص أبيض ليظهر فوق الصورة */
+            background-size: cover; 
+            background-position: center; 
+        }
+        
+        /* الصورة تأخذ المساحة كلها (100% عرض وارتفاع) */
+        .collection-card img { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.5s; 
+            z-index: 1; /* لتكون أسفل النص */
+        }
+        .collection-card:hover img { 
+            transform: scale(1.1); 
+        }
+        
+        /* النص يظهر فوق الصورة ويأخذ عرض كامل */
+        .collection-card .text-content { 
+            position: relative; 
+            z-index: 2; /* ليكون فوق الصورة */
+            padding: 40px 20px; 
+            width: 100%; /* النص يأخذ عرض البطاقة كاملاً */
+            /* يمكن إضافة ظل للنص لزيادة الوضوح فوق الخلفية */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+        }
+        
+        /* تحديد البطاقة الوسطى وجعلها أكبر (350px) */
+        .row .col-md-4:nth-child(2) .collection-card {
+             min-height: 350px; 
+        }
+
+        .bg-light-gray { background-color: #f3f4f6; }
+        .bg-light-pink { background-color: #fce7f3; }
+        .btn-link { font-size: 0.9rem; font-weight: bold; color: #fff; background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 20px; }
+        .bg-beige { background-color: #f5f5f0; } 
+
+        /* Homepages Mega Menu CSS */
+        .homepage-dropdown-wrapper { position: relative; display: flex; align-items: center; }
+        .mega-menu { display: none; opacity: 0; position: absolute; top: 100%; left: 0; z-index: 1050; min-width: 800px; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease; }
+        .homepage-dropdown-wrapper:hover .mega-menu { display: block; opacity: 1; transform: translateY(0); }
+        .homepage-item img { height: 120px; width: 100%; object-fit: cover; border: 1px solid #eee; }
+        .h-60px { height: 60px; }
+
+        /* 9. FOOTER STYLES (DARK THEME) */
+        .bg-dark-custom { background-color: #1c1c1c !important; color: #fff; }
+        .footer-logo { font-size: 1.8rem; font-weight: 900; color: #fff; }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; line-height: 2.2; font-size: 0.95rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-subscribe .form-control { background-color: #333; border: 1px solid #333; color: #fff; padding-right: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+        .footer-subscribe .form-control::placeholder { color: rgba(255, 255, 255, 0.5); }
+        .footer-subscribe .btn-dark-arrow { background-color: #333; color: #fff; border: 1px solid #333; padding: 0.375rem 0.75rem; border-top-left-radius: 0; border-bottom-left-radius: 0; transition: background-color 0.2s; }
+        .footer-subscribe .btn-dark-arrow:hover { background-color: #444; }
+        .social-icons a { color: #fff; font-size: 1.2rem; margin-right: 15px; transition: color 0.2s; }
+        .social-icons a:hover { color: #dc3545; }
+        .footer-divider { border-color: rgba(255, 255, 255, 0.1); }
+        .help-box { display: flex; align-items: center; background-color: #262626; padding: 15px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+        .help-box i { font-size: 1.5rem; color: #fff; }
+        .help-box p { margin: 0; font-size: 0.9rem; line-height: 1.3; color: rgba(255, 255, 255, 0.8); }
+        .footer-cta-link { color: #fff; font-weight: bold; text-decoration: underline; text-underline-offset: 2px; transition: color 0.2s; }
+        .footer-cta-link:hover { color: #dc3545; }
+        .payment-icons { max-height: 25px; width: auto; }
+        @media (max-width: 767.98px) { .help-box { justify-content: center; text-align: center; } .help-box i { display: none; } .site-footer .text-center.text-md-end { text-align: center !important; } }
+        
+        /* 10. HIGHLIGHT SECTION & BLOG */
+        .highlight-image { flex: 1; }
+        .highlight-details { flex: 1; margin-left: -50px; z-index: 2; max-width: 500px; }
+        @media(max-width: 768px) { .highlight-details { margin-left: 0; margin-top: -30px; width: 90%; } }
+        .bg-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 150px; font-weight: 900; color: rgba(0,0,0,0.05); z-index: -1; pointer-events: none; }
+        .main-img { filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); transition: 0.3s; max-width: 100%; }
+        .thumb-img { width: 70px; height: 70px; border-radius: 8px; cursor: pointer; border: 2px solid transparent; }
+        .thumb-img.active { border-color: black; }
+        .discount-badge { position: absolute; top: 0; right: 20px; background: red; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .hover-scale { transition: 0.5s; }
+        .blog-card:hover .hover-scale { transform: scale(1.1); }
+        .custom-tabs .nav-link { color: #888; font-weight: bold; }
+        .custom-tabs .nav-link.active { color: black; background: transparent; border-bottom: 2px solid black; border-radius: 0; }
+        .text-decoration-underline {
+    text-decoration: none !important; 
+}
+.dotted-underline {
+  /* نستخدم الخاصية المختصرة text-decoration لتطبيق التسطير و النمط معاً */
+  text-decoration: underline dotted;
+  /* يمكنك تحديد لون الخط المنقط (وهو هنا أحمر بسبب فئة text-danger) */
+  /* text-decoration-color: red; */
+  
+  /* في بعض المتصفحات القديمة قد نحتاج لإزالة text-decoration واستخدام border-bottom */
+  /* text-decoration: none !important; */
+  /* border-bottom: 2px dotted red; */
+  /* padding-bottom: 2px; */
+}
+
+/* هذا الكود يفترض أن يتم إضافته إلى ملف style.css */
+
+/* 1. تحديد الصورة داخل حاوية البانر */
+.w-50.w-lg-50 .h-50 .banner-img {
+    /* تطبيق انتقال سلس (Transition) لخصائص التحويل والشفافية */
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+/* 2. التأثير عند تمرير الماوس (Hover) على حاوية البانر */
+.w-50.w-lg-50 .h-50:hover .banner-img {
+    /* تكبير الصورة بنسبة 5% */
+    transform: scale(1.05); 
+}
